@@ -21,4 +21,7 @@ los links.
 * [Acerca de Node.js - Documentación oficial](https://nodejs.org/es/about/)
 https://medium.com/netscape/a-guide-to-create-a-nodejs-command-line-package-c2166ad0452e
 
-https://docs.npmjs.com/creating-node-js-modules
+* https://docs.npmjs.com/creating-node-js-modules
+
+* https://algoError.deprueba.com/
+

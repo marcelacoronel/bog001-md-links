@@ -1,17 +1,16 @@
 const getLinks = require('./lib/getLinks.js');
+const validateLinks = require('./lib/validateLinks');
+
 
 const { resolve } = require('path');
 const path = require('path');
 const fs = require('fs');
-//*----DATOS DE ENTRADA DE PRUEBA
-let pathUser = './mdFiles';
-// let pathUser = "./mdFiles/onlyText.md";
-// let pathUser = "./mdFiles/prueba.md";
-// let pathUser = "./mdFiles/texto.txt";
-// let pathUser = "";
-// pathReceived = "";
-// pathReceived = "../../pruebaArchivos/docMD.md";
-//*----FIN DATOS ENTRADA
+
+//*----DATOS DE ENTRADA DE PRUEBA ---*/
+// let pathUser = './mdFiles';
+// let options = { validate: true };
+// let options = { validate: false };
+//*----FIN DATOS ENTRADA ---*/
 
 // *---Validar si ruta existe y es absoluta----
 const validateRoute = ((pathUser) => {
@@ -23,30 +22,35 @@ const validateRoute = ((pathUser) => {
   } 
 });
 
-
-//*--Función principal MDLINKS--------------
-const mdLinks = (pathUser) => {
+//**--Función principal MDLINKS----- */
+const mdLinks = (pathUser,options={})=> {
   return new Promise((resolve, reject) => {
     const validPath = validateRoute(pathUser);
-    getLinks(validPath).then((links)=>{
-    console.log(links);
-    resolve(links);
+    getLinks(validPath)
+    .then((links)=>{
+      if (options.validate) {
+        resolve(validateLinks(links));
+      }
+      // else {
+        // console.log("respueta de getlinks");
+        // console.log(links);
+        resolve(links);
+      // }
+     
+    
     })
     .catch((err)=>{
-      console.log(err);
+      console.log(err.message);
       reject(err)
     });
+    
   });
 }
 
-mdLinks(pathUser);
 
+//**---Prueba de mdlinks---- */
+// mdLinks(pathUser,options);
 
-
-//*--EJEMPLO PASAR DATOS DESDE LA CONSOLA
-//readFileUser(path.resolve(process.argv[2]))
-//.then(console.log(readFileUser))
-//* ---------------
 
 module.exports = mdLinks;
 module.exports = validateRoute;
