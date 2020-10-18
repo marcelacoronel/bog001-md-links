@@ -1,6 +1,6 @@
-const mdLinks = require('../index.js');
+const { mdLinks ,validateRoute } = require('../index.js');
 const getLinks = require('../lib/getLinks.js');
-const validateRoute = require('../index.js');
+// const  = require('../index.js');
 const getFilesMd = require('../lib/getFilesMd.js');
 const readFilesMd = require('../lib/readFilesMd.js');
 const validateLinks = require('../lib/validateLinks.js');
@@ -22,8 +22,9 @@ describe('mdLinks', () => {
     expect(validateRoute('./mdFiles')).toBe('C:\\Users\\Marcela\\proyecto4\\bog001-md-links\\mdFiles')
   });
 
-  it.skip('Should resolve a promise with links array ', () =>{
-    const pathValid = path.resolve('./mdFiles');
+  it.only('Should resolve a promise with links array ', (done) =>{
+    const pathValid = './mdFiles';
+    console.log(pathValid);
     const arrLinks = [
       {
         href: 'https://github.com/markdown-it/markdown-it',
@@ -61,11 +62,12 @@ describe('mdLinks', () => {
         pathFile: 'C:\\Users\\Marcela\\proyecto4\\bog001-md-links\\mdFiles'
       }
     ];
-    getLinks(pathValid).then((r)=>{
-    expect(mdLinks.resolve(pathValid)).resolves.toBe(arrLinks);
-    // return (pathValid).resolves.toEqual(getLinks(pathValid))
-    });
-
+    // mdLinks(pathValid).then((r)=>{
+    // expect(r).toEqual(arrLinks);
+    // done();
+    // });
+    expect(mdLinks(pathValid)).resolves.toEqual(arrLinks);
+    done();
     // 
   });
 
