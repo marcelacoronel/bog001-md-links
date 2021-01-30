@@ -7,9 +7,9 @@ const path = require('path');
 const fs = require('fs');
 
 //*----DATOS DE ENTRADA DE PRUEBA ---*/
-let pathUser = './mdFiles';
+// let pathUser = './mdFiles';
 // let options = { validate: true };
-let options = { validate: false };
+// let options = { validate: false };
 //*----FIN DATOS ENTRADA ---*/
 
 // *---Validar si ruta existe y es absoluta----
@@ -49,6 +49,9 @@ const mdLinks = (pathUser,options={})=> {
 //**---Prueba de mdlinks---- */
 // mdLinks(pathUser,options)
 // .then((resp)=>console.log(resp));
+
+mdLinks(process.argv[2])
+.then((resp)=>console.log(resp));
 
 
 
