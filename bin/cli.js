@@ -15,8 +15,7 @@ const pathUser = argv._[0];
 /**Obtener solo links */
 if (!argv.validate && !argv.stats) {
     console.log(chalk.bold.cyan(" ------getting links, wait !! ------\n"));
-    const pathResolved = mdLinks(pathUser);
-    getLinks(pathResolved)
+    mdLinks(pathUser, { validate: false })
     .then((links)=>{
         links.forEach((infoLink, i)=>{
             console.log(`
@@ -27,34 +26,25 @@ if (!argv.validate && !argv.stats) {
             ----------------------------------\n
           `);            
         });
-    
 });
 }
 
 /**---Mostrar stats y validate--- */
 if (argv.validate && argv.stats) {
     console.log(chalk.bold.cyan(" ------Validate and stats links ------\n"));
-    const pathResolved = mdLinks(pathUser);
-    getLinks(pathResolved)
-    .then((links)=>{
-        validateLinks(links)
+    mdLinks(pathUser, { validate: true })
         .then((validLinks)=>{
             const arrayStats = statsLinks(validLinks);
             console.log( chalk.white(`Total Links: ${arrayStats[0]}`) );
             console.log( chalk.underline.blue(`Unique: ${arrayStats[1]}`) );
             console.log( chalk.red(`Broken: ${arrayStats[2]}\n`) );
-        });
-    });
-   
+        });  
 }
 
 /**---Mostrar solo validate ---*/
 if (argv.validate && !argv.stats) {
     console.log(chalk.bold.cyan(" -----Validating links, wait!!------\n"));
-    const a = mdLinks(pathUser,{ validate: true })
-    getLinks(a)
-    .then((links)=>{
-        validateLinks(links)
+    mdLinks(pathUser,{ validate: true })
         .then((validLinks)=>{
             validLinks.forEach((infoLink, i)=>{
                 console.log(`------link ${i+1}------`)
@@ -71,13 +61,11 @@ if (argv.validate && !argv.stats) {
                 }    
             })
         })
-    })
 }
 
 /**---Mostrar solo stats--- */
 if (!argv.validate && argv.stats) {
-    const a = mdLinks(pathUser);
-    getLinks(a)
+    mdLinks(pathUser, { validate: false })
     .then((links)=>{
         const arrStats = statsLinks(links);
         console.log(chalk.bold.cyan("----Stats links----\n"));

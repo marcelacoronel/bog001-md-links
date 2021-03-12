@@ -1,7 +1,7 @@
-const { mdLinks ,validateRoute } = require('../index.js');
+const mdLinks = require('../index.js');
 const getLinks = require('../lib/getLinks.js');
 // const  = require('../index.js');
-const getFilesMd = require('../lib/getFilesMd.js');
+const getFilesMd= require('../lib/getLinks.js');
 const readFilesMd = require('../lib/readFilesMd.js');
 const validateLinks = require('../lib/validateLinks.js');
 const statsLinks = require('../lib/statsLinks.js');
@@ -13,16 +13,16 @@ const path = require('path');
 
   /**---Función Principal  mdLinks--- */
 describe('mdLinks', () => {
-  it('Should be a function', () => {
+  it.only('Should be a function', () => {
     expect(typeof mdLinks).toBe('function')
   });
  
 
   it('Should return absolute path', () => {
-    expect(validateRoute('./mdFiles')).toBe('C:\\Users\\Marcela\\proyecto4\\bog001-md-links\\mdFiles')
+    expect(validateRoute('./mdFiles')).toBe('C:\\Users\\marce\\Proyectos\\mdlinks\\bog001-md-links\\mdFiles')
   });
 
-  it.only('Should resolve a promise with links array ', (done) =>{
+  it('Should resolve a promise with links array ', (done) =>{
     const pathValid = './mdFiles';
     console.log(pathValid);
     const arrLinks = [
@@ -159,8 +159,9 @@ describe('getFilesMd', () => {
   it('Should return array with 2 files includes its path', () => {
     const pathResolved = path.resolve('./mdFiles');
     const filesMd = [
-    'C:\\Users\\Marcela\\proyecto4\\bog001-md-links\\mdFiles\\onlyText.md',
-    'C:\\Users\\Marcela\\proyecto4\\bog001-md-links\\mdFiles\\prueba.md'
+      'C:\Users\marce\Proyectos\mdlinks\bog001-md-links\mdFiles\dirPrueba\fileMdOtro.md',
+      'C:\Users\marce\Proyectos\mdlinks\bog001-md-links\mdFiles\onlyText.md',
+      'C:\Users\marce\Proyectos\mdlinks\bog001-md-links\mdFiles\prueba.md'
     ];
     getFilesMd(pathResolved).then((files)=>{
       expect(files).toStrictEqual(filesMd);
@@ -168,10 +169,10 @@ describe('getFilesMd', () => {
   });
 
   it('Should resolve with md files array ', () => {
-    const pathResolved3 = path.resolve('./mdFiles');
+    const pathResolved3 = './mdFiles';
     const files = [
-      'C:\\Users\\Marcela\\proyecto4\\bog001-md-links\\mdFiles\\onlyText.md',
-      'C:\\Users\\Marcela\\proyecto4\\bog001-md-links\\mdFiles\\prueba.md'
+      'C:\\Users\\marce\\Proyectos\\mdlinks\\bog001-md-links\\mdFiles\\onlyText.md',
+      'C:\\Users\\marce\\Proyectos\\mdlinks\\bog001-md-links\\mdFiles\\prueba.md'
       ];
     return expect(getFilesMd(pathResolved3)).resolves.toEqual(files);
   });
@@ -296,7 +297,7 @@ describe('validateLinks', ()=>{
 
   
 
-  it.skip('Should return broken link ', () => {
+  it('Should return broken link ', () => {
     const linkPrueba = [ {
       href: 'https://algoError.deprueba.com/',
       text: 'https://algoError.deprueba.com/',
