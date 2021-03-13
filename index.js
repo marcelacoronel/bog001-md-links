@@ -1,25 +1,6 @@
-const getLinks = require('./lib/getLinks.js');
+const {getLinks} = require('./lib/getLinks.js');
 const validateLinks = require('./lib/validateLinks');
-const { resolve } = require('path');
-const path = require('path');
 const fs = require('fs');
-
-
-
-// Función principal MDLINKS
-// const mdLinks = (pathUser, options = {}) => {
-//       return getLinks(pathUser)
-//       .then((links)=>{
-//         if (options.validate) {
-//           return validateLinks(links);
-//         }
-//         else
-//           return links;
-//       })
-//       .catch((err)=>{
-//         console.log(err.message);
-//       });
-//   }
 
   const mdLinks = (pathUser, options = {}) => {
     return new Promise((resolve, reject) => {
@@ -35,8 +16,6 @@ const fs = require('fs');
         console.log(err.message);
       });
     })
-
-    
 }
 
 //Prueba para ingreso de ruta y ejecutar la función mdLinks
