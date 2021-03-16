@@ -1,6 +1,6 @@
 {
   "name": "marcelacoronelp-md-links",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "app to find and validate the links available in a markdown file (.MD)",
   "main": "./src/index.js",
   "bin": {
@@ -29,7 +29,13 @@
     "type": "git",
     "url": "git+https://github.com/marcelacoronel/bog001-md-links.git"
   },
-  "keywords": [],
+  "keywords": [
+    "node.js",
+    "javascript",
+    "link",
+    "markdown",
+    "cli"
+  ],
   "bugs": {
     "url": "https://github.com/marcelacoronel/bog001-md-links/issues"
   },
