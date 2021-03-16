@@ -141,3 +141,6 @@ A continuación puedes ver los objetivos de aprendizaje de este proyecto:
 * [X] Pruebas unitarias cubren un mínimo del 70% de statements, functions,
   lines, y branches.
 * [X] Pasa tests (y linters) (`npm test`).
+
+![test](/img/totalSuites.png)
+![coverage](/img/coverage.png)
