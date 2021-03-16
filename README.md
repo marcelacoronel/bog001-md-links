@@ -3,7 +3,7 @@
 Aplicación que permite extraer los links de un archivo Markdown , validar su estado y mostrar estadísticas como links OK, únicos y broken.
 
 ## 1. Diagrama de Flujo
-![DFD](/img/dfdMdLinks.png)
+![Diagrama de Flujo](https://github.com/marcelacoronel/bog001-md-links/blob/develop/img/dfdMdLinks.png?raw=true)
 
 ## 2. Instalación
 
@@ -25,7 +25,7 @@ manera a través de la terminal:
 
 Si se ejecuta sin pasar opciones se obtendrá información de cada link encontrado. [{ href, text, file }]
 
-![links](/img/directory.png)
+![links](https://github.com/marcelacoronel/bog001-md-links/blob/develop/img/directory.png?raw=true)
 
 ##### `--validate`
 
@@ -34,7 +34,7 @@ averiguar si el link funciona o no. Si el link resulta en una redirección a una
 URL que responde ok, entonces consideraremos el link como ok.
 
 Ejemplo:
-![validate](/img/validate.png)
+![validate](https://github.com/marcelacoronel/bog001-md-links/blob/develop/img/validate.png?raw=true)
 
 
 ##### `--stats`
@@ -42,13 +42,13 @@ Ejemplo:
 Si pasamos la opción `--stats` el output (salida) será un texto con estadísticas
 básicas sobre los links.
 
-![stats](/img/stats.png)
+![stats](https://github.com/marcelacoronel/bog001-md-links/blob/develop/img/stats.png?raw=true)
 
 
 También podemos combinar `--stats` y `--validate` para obtener estadísticas que
 necesiten de los resultados de la validación.
 
-![validate-stats](/validate-stats.png)
+![validate-stats](https://github.com/marcelacoronel/bog001-md-links/blob/develop/img/validate-stats.png?raw=true)
 
 ## 4. Objetivos de aprendizaje
 

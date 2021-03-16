@@ -29,7 +29,8 @@
     "type": "git",
     "url": "git+https://github.com/marcelacoronel/bog001-md-links.git"
   },
-  "keywords": [],
+  "keywords": [
+    "node.js","javascript", "link", "markdown", "cli"],
   "bugs": {
     "url": "https://github.com/marcelacoronel/bog001-md-links/issues"
   },
