@@ -1,6 +1,6 @@
 {
-  "name": "marcelacoronel-md-links",
-  "version": "0.1.0",
+  "name": "marcelacoronelp-md-links",
+  "version": "1.0.0",
   "description": "app to find and validate the links available in a markdown file (.MD)",
   "main": "./src/index.js",
   "bin": {
@@ -16,7 +16,7 @@
   "scripts": {
     "test": "jest --coverage"
   },
-  "author": "Marcela Coronel Picon",
+  "author": "Marcela Coronel Picon <marcelacoronelp@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "jest": "^26.5.0"

@@ -31,6 +31,9 @@ if (!argv.validate && !argv.stats) {
             ----------------------------------\n
           `);            
         });
+})
+.catch((e) => {
+    console.log(`Error:${chalk.yellowBright(e)}`);
 });
 }
 
@@ -45,7 +48,10 @@ if (argv.validate && argv.stats) {
             console.log( chalk.yellowBright(`Total Links: ${arrayStats[0]}`) );
             console.log( chalk.underline.green(`Unique: ${arrayStats[1]}`) );
             console.log( chalk.red(`Broken: ${arrayStats[2]}\n`) );
-        });  
+        })
+        .catch((e) => {
+            console.log(`Error:${chalk.yellowBright(e)}`);
+        });
 }
 
 /**---Mostrar solo validate ---*/
@@ -70,6 +76,9 @@ if (argv.validate && !argv.stats) {
                 }    
             })
         })
+        .catch((e) => {
+            console.log(`Error:${chalk.yellowBright(e)}`);
+        });
 }
 
 /**---Mostrar solo stats--- */
@@ -83,6 +92,9 @@ if (!argv.validate && argv.stats) {
         console.log( chalk.yellowBright(`Total Links: ${arrStats[0]}`) );
         console.log( chalk.underline.blue(`Unique Links: ${arrStats[1]}\n`) );
     })
+    .catch((e) => {
+        console.log(`Error:${chalk.yellowBright(e)}`);
+    });
 }
 
 
