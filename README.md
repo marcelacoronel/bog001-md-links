@@ -23,7 +23,7 @@ manera a través de la terminal:
 
 #### Options
 
-Si se ejecuta sin pasar opciones se obtendrá información de cada link encontrado. [{ href, text, file }]
+Si se ejecuta sin pasar opciones se obtendrá información de cada link encontrado. [{ href, text, file }].
 
 ![links](https://github.com/marcelacoronel/bog001-md-links/blob/develop/img/directory.png?raw=true)
 
