@@ -11,6 +11,8 @@ npm i marcelacoronelp-md-links
 
 ## 3. Uso
 
+const mdLinks = require("marcelacoronelp-md-links");
+
 ### CLI (Command Line Interface - Interfaz de Línea de Comando)
 
 El ejecutable de nuestra aplicación debe poder ejecutarse de la siguiente
@@ -21,7 +23,7 @@ manera a través de la terminal:
 
 #### Options
 
-Si se ejecuta sin pasar opciones se optendrá información de cada link encontrado.
+Si se ejecuta sin pasar opciones se obtendrá información de cada link encontrado. [{ href, text, file }]
 
 ![links](/img/directory.png)
 
@@ -142,5 +144,10 @@ A continuación puedes ver los objetivos de aprendizaje de este proyecto:
   lines, y branches.
 * [X] Pasa tests (y linters) (`npm test`).
 
-![test](/img/totalSuites.png)
-![coverage](/img/coverage.png)
+
+Npm test
+![test](https://github.com/marcelacoronel/bog001-md-links/blob/develop/img/totalSuites.png?raw=true)
+
+Coverage
+![coverage](https://github.com/marcelacoronel/bog001-md-links/blob/develop/img/coverage.png?raw=true)
+
